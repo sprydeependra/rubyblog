@@ -1,0 +1,32 @@
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr><td colspan="2"><h3>Title: </title><%= article.title %></h3></td></tr>
+    <tr><td colspan="2">Content: <%= article.text %></td></tr>
+    <tr><td colspan= "2" >Tags: </td></tr>
+    <tr>
+      <td><%= link_to 'parmalink', article_path(article) %></td>
+      <td > | comments(<%= article.comments.count %>) |<en> last updated on <%= article.updated_at %></en></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %>
+      
+      <%= link_to 'Delete', article_path(article), method: :Delete, data: { confirm: 'Are you sure?'} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Log in to Add new Article', new_article_path %>
+<% email_address="deependra@gmail.com "%>
+
+<%= html_escape("is a &gt; 0 &amp; a &lt; 10?")%>
+
+<a href="http://www.google.com/recaptcha/mailhide/d?k=01F5TQhmaamayqPB7AQd-DIQ==&amp;c=UbzKjBB0xfx7fhWCYwxSYkqi-XhiKPkz9qVOL7keYHg=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501F5TQhmaamayqPB7AQd-DIQ\75\75\46c\75UbzKjBB0xfx7fhWCYwxSYkqi-XhiKPkz9qVOL7keYHg\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal this e-mail address">de..</a>@gmail.com
+
+
+
